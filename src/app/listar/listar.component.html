@@ -8,7 +8,24 @@
             <th scope="col">Tamaño</th>
         </tr>
     </thead>
-    <tbody>
-
+    <tbody *ngIf="computers.length > 0">
+        <tr *ngFor="let computer of computers; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ computer.name }}</td>
+            <td>{{ computer.mark }}</td>
+            <td>${{ computer.price }}</td>
+            <td><ng-container *ngIf="computer.size; else elseTemplate">
+                    {{ computer.size }} Pulgadas
+                </ng-container>
+                <ng-template #elseTemplate>
+                    Sin referencia
+                </ng-template>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="computers.length === 0">
+        <tr>
+            <td colspan="5" class="text-center">No se encontraron computadoras.</td>
+        </tr>
     </tbody>
 </table>
