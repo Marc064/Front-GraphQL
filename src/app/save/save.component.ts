@@ -34,6 +34,10 @@ export class SaveComponent {
   }
 
   saveData() {
+    if (!this.name || !this.mark || !this.price || !this.size) {
+      alert('Por favor, complete todos los campos antes de guardar.');
+      return; 
+    }
     this.apollo.mutate({
       mutation: createComputeMutation,
       variables: {
@@ -41,7 +45,7 @@ export class SaveComponent {
         name: this.name,
         mark: this.mark,
         price: this.price,
-        size: this.size // Agregado el parámetro size
+        size: this.size 
       }
     }).subscribe({
       next: (result) => {
@@ -56,7 +60,7 @@ export class SaveComponent {
         window.location.reload();
       },
       error: (error) => {
-        console.error('Error al guardar los datos:', error);
+        alert('Error al guardar los datos:');
       }
     });
   }
