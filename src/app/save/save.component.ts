@@ -20,7 +20,7 @@ const createComputeMutation = gql`
   styleUrls: ['./save.component.css']
 })
 export class SaveComponent {
-  id: number = 0;
+  id: string = "" ;
   name: string = '';
   mark: string = '';
   price: number = 0;
@@ -34,7 +34,7 @@ export class SaveComponent {
   }
 
   saveData() {
-    if (!this.name || !this.mark || !this.price || !this.size) {
+    if (!this.name || !this.mark || !this.price ) {
       alert('Por favor, complete todos los campos antes de guardar.');
       return; 
     }
@@ -51,7 +51,7 @@ export class SaveComponent {
       next: (result) => {
         console.log('Datos guardados:', result.data);
         this.showPopup = false;
-        this.id = 0; 
+        this.id = ""; 
         this.name = '';
         this.mark = '';
         this.price = 0;

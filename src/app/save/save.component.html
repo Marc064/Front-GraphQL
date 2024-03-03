@@ -16,27 +16,26 @@
               <form (ngSubmit)="saveData()">
                 <div class="mb-3">
                     <label for="id" class="form-label">ID:</label>
-                    <input type="number" class="form-control" id="id" name="id" [(ngModel)]="id">
+                    <input type="number" class="form-control" id="id" name="id" [(ngModel)]="id" placeholder="ID">
                   </div>
                   <div class="mb-3">
                       <label for="name" class="form-label">Nombre:</label>
-                      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name">
+                      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" placeholder="Nombre">
                   </div>
                   <div class="mb-3">
                       <label for="mark" class="form-label">Marca:</label>
-                      <input type="text" class="form-control" id="mark" name="mark" [(ngModel)]="mark">
+                      <input type="text" class="form-control" id="mark" name="mark" [(ngModel)]="mark" placeholder="Marca">
                   </div>
                   <div class="mb-3">
                       <label for="price" class="form-label">Precio:</label>
-                      <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price">
+                      <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price" placeholder="Precio">
                   </div>
                   <div class="mb-3">
-                    <label for="price" class="form-label">Tamaño:</label>
-                    <input type="number" class="form-control" id="size" name="size" [(ngModel)]="size">
+                    <label for="size" class="form-label">Tamaño:</label>
+                    <input type="number" class="form-control" id="size" name="size" [(ngModel)]="size" placeholder="Tamaño">
                 </div>
-          
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
           </form>
