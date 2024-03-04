@@ -4,15 +4,7 @@
 <div class="d-flex justify-content-between">
     <div>
         <app-save></app-save>
-    </div>
-    <div>
-        <!-- Agrega el campo de entrada para el ID -->
-        <div class="mb-3">
-            <label for="updateId" class="form-label">ID del objeto a actualizar:</label>
-            <input type="text" class="form-control" id="updateId" name="updateId" [(ngModel)]="idToUpdate" placeholder="Ingrese el ID">
-        </div>
-        <!-- Pasa el valor de idToUpdate como un atributo de entrada al componente UpdateComponent -->
-        <app-update [id]="idToUpdate"></app-update>
+        <app-update></app-update>
     </div>
 </div>
 <hr> 

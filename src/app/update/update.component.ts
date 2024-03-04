@@ -30,49 +30,7 @@ export class UpdateComponent {
 
   openPopup() {
     this.showPopup = true;
-    this.fetchDataById();
-  }
-
-  fetchDataById() {
-    if (!this.id) {
-      alert('Por favor, ingrese un ID válido.');
-      return;
-    }
-  
-    const getComputeQuery = gql`
-      query GetCompute($id: ID!) {
-        getComputeByID(id: $id) {
-          id
-          name
-          mark
-          price
-          size
-        }
-      }
-    `;
-  
-    this.apollo.watchQuery<any>({
-      query: getComputeQuery,
-      variables: {
-        id: this.id
-      }
-    }).valueChanges.subscribe(({ data }) => {
-      const computeData = data.getComputeByID;
-      if (computeData) {
-        // Llena los campos con los datos obtenidos
-        this.name = computeData.name;
-        this.mark = computeData.mark;
-        this.price = computeData.price;
-        this.size = computeData.size;
-      } else {
-        alert('No se encontraron datos para el ID proporcionado.');
-      }
-    }, (error) => {
-      alert('Error al obtener los datos:');
-      console.error(error);
-    });
-  }
-   
+  } 
 
   updateData() {
     if (!this.name || !this.mark || !this.price ) {

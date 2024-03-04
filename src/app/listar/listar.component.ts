@@ -15,8 +15,6 @@ const getComputes = gql`
   }
 `;
 
-
-
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
