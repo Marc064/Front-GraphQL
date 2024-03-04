@@ -12,12 +12,8 @@
     </thead>
     <tbody *ngIf="computers.length > 0">
         <tr *ngFor="let computer of computers; let i = index">
-<<<<<<< Updated upstream
-            <td>{{ i+1 }}</td>
-=======
             <td>{{ i + 1 }}</td>
             <td>{{ computer.id }}</td>
->>>>>>> Stashed changes
             <td>{{ computer.name }}</td>
             <td>{{ computer.mark }}</td>
             <td>${{ computer.price }}</td>
@@ -29,10 +25,11 @@
                 </ng-template>
             </td>
             <td>
-      
+
                 <app-eliminar [id]="computer.id"></app-eliminar>
-              </td>
-           
+                      
+            </td>
+
         </tr>
     </tbody>
     <tbody *ngIf="computers.length === 0">
