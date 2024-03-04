@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Computer } from './Computer';
+import * as tslib from 'tslib';
 
 const getComputes = gql`
   query {

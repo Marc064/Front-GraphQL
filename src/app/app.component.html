@@ -1,7 +1,20 @@
-<h1>Consumo de api con graphql</h1>
+<h1>Consumo De API Con GraphQL</h1>
 <hr> 
-<h3>CRUD</h3>
-<app-save></app-save>
+<h3>Opciones Para Realizar</h3>
+<div class="d-flex justify-content-between">
+    <div>
+        <app-save></app-save>
+    </div>
+    <div>
+        <!-- Agrega el campo de entrada para el ID -->
+        <div class="mb-3">
+            <label for="updateId" class="form-label">ID del objeto a actualizar:</label>
+            <input type="text" class="form-control" id="updateId" name="updateId" [(ngModel)]="idToUpdate" placeholder="Ingrese el ID">
+        </div>
+        <!-- Pasa el valor de idToUpdate como un atributo de entrada al componente UpdateComponent -->
+        <app-update [id]="idToUpdate"></app-update>
+    </div>
+</div>
 <hr> 
 <h2>Computadores</h2>
 <app-listar></app-listar>
