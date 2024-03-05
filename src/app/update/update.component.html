@@ -1,42 +1,40 @@
-<button type="button" class="btn btn-success fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<td>
+  <button type="button" class="btn btn-primary fw-bold" data-bs-toggle="modal" data-bs-target="#updateModal" (click)="openPopup()">
     Modificar
   </button>
+</td>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Modificar Datos</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form (ngSubmit)="updateData()">
-            <div class="mb-3">
-              <label for="id" class="form-label">ID:</label>
-              <input type="number" class="form-control" id="id" name="id" [(ngModel)]="id" placeholder="ID">
-            </div>
-            <div class="mb-3">
-              <label for="name" class="form-label">Nombre:</label>
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" placeholder="Nombre">
-            </div>
-            <div class="mb-3">
-              <label for="mark" class="form-label">Marca:</label>
-              <input type="text" class="form-control" id="mark" name="mark" [(ngModel)]="mark" placeholder="Marca">
-            </div>
-            <div class="mb-3">
-              <label for="price" class="form-label">Precio:</label>
-              <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price" placeholder="Precio">
-            </div>
-            <div class="mb-3">
-              <label for="size" class="form-label">Tamaño:</label>
-              <input type="number" class="form-control" id="size" name="size" [(ngModel)]="size" placeholder="Tamaño">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Modificar</button>
-            </div>
-          </form>
-        </div>
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-center" id="updateModalLabel">Modificar Datos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="updateData()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre:</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" placeholder="Nombre">
+          </div>
+          <div class="mb-3">
+            <label for="mark" class="form-label">Marca:</label>
+            <input type="text" class="form-control" id="mark" name="mark" [(ngModel)]="mark" placeholder="Marca">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Precio:</label>
+            <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price" placeholder="Precio">
+          </div>
+          <div class="mb-3">
+            <label for="size" class="form-label">Tamaño:</label>
+            <input type="number" class="form-control" id="size" name="size" [(ngModel)]="size" placeholder="Tamaño">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="closePopup()">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>

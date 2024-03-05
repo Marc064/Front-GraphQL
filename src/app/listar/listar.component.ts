@@ -22,8 +22,13 @@ const getComputes = gql`
 })
 export class ListarComponent {
   computers: Computer[] = [];
+  selectedComputerId: string = "";
 
   constructor(private apollo: Apollo) {}
+
+  selectComputer(id: string) {
+    this.selectedComputerId = id;
+  }
 
   ngOnInit() {
     this.apollo.query<{ getAllComputes: Computer[] }>({
@@ -31,7 +36,7 @@ export class ListarComponent {
     })
     .subscribe({
       next: (result) => {
-        this.computers = result.data.getAllComputes;
+        this.computers = result.data.getAllComputes;        
       }
     });
   }
